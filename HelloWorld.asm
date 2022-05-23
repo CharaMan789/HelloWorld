@@ -6,6 +6,12 @@ section .text
     mov ecx, hello
     mov edx, hello_len
     int 0x80
+    
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, underscore
+    mov edx, 1
+    int 0x80
 
     mov eax, 4
     mov ebx, 1
@@ -21,5 +27,6 @@ section .text
 section .data
   hello: db "Hello"
   hello_len equ $-hello
-  world: db " World", 0xA
+  underscore: db "_"
+  world: db "World", 0xA
   world_len equ $-world
